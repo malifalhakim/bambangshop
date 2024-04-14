@@ -84,5 +84,11 @@ This is the place for you to write reflections:
 3. Penggunaan DashMap pada Singleton pattern membantu aplikasi atau program untuk menangani *reads* dan *writes* secara bersamaan. Oleh karena itu, akan lebih baik jika kita menggunakan DashMap dibanding HashMap. Hal ini dikarenakan DashMap lebih cocok untuk aplikasi multithreading dimana aplikasi yang kita buat memerlukan hal ini karena akan diakses oleh banyak thread. Dengan singleton pattern seperti yang telah kita implementasikan, kita dapat memastikan objek-objek subscriber hanya berada pada 1 DashMap karena singleton pattern memastikan hanya terdapat 1 instance dari objek tersebut.
 
 #### Reflection Publisher-2
+1. Pemisahan *Repository* dan *Service* perlu dipisahkan dari *Model* bertujuan untuk memenuhi *Single Responsibility Principle* dimana setiap objek seharusnya hanya melakukan atau bertanggung jawab pada satu hal saja. Pada MVC, model mengetahui banyak hal mulai dari *bussiness logic*, validasi, data itu sendiri, dan operasi penyimpanan data. Dengan memisahkan *bussiness logic* ke *Service* dan *data storage operations* ke *Repository*, sekarang *Model* hanya berfungsi sebagai representasi atau struktur dari sekumpulan data
+
+2. Jika kita hanya menggunakan *Model*, maka kode untuk setiap *Model* akan menjadi besar. Hal ini akan mengakibatkan kode semakin kompleks dan sulit untuk dipahami. Selain itu, hal ini juga akan menyebabkan pelanggaran *Single Responsibility Principle* sehingga kode menjadi sulit untuk di-*maintain*. Contohnya jika kita ingin mengubah suatu *logic*, kita perlu untuk memeriksa apakah perubahan tersebut berdampak pada bagian lain. Ditambah jika kita tidak melakukan pemisahan, maka dapat menghasilkan program dengan tingkat *coupling* yang tinggi.
+
+3. Menurut saya, Postman adalah tool yang sangat bermanfaat untuk membuat suatu aplikasi terutama dalam mengetes API. Postman dapat membantu saya dalam mengirim HTTP request dan membantu saya dalam memeriksa *response*-nya juga. Hal ini sangat membantu saya dalam melakukan *debugging* ataupun meningkatkan kualitas API.
+
 
 #### Reflection Publisher-3
