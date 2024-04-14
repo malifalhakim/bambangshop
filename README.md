@@ -92,3 +92,8 @@ This is the place for you to write reflections:
 
 
 #### Reflection Publisher-3
+1. Pada kasus ini, kita menggunakan variasi *Push Model*. Hal ini dikarenakan setiap terjadi penambahan atau penghapusan product, method `notify` pada `NotificationService` dieksekusi. Hal ini menggambarkan *publisher* mempunyai kemampuan untuk membuat keputusan untuk mengirim notifikasi dan data pada notifikasi kepada *subscriber*-nya. *Subscriber* pun menerima notifikasi tersebut tanpa perlu melakukan *request*. 
+
+2. Jika kita menggunakan *pull model*, maka *subscriber* yang menentukan kapan mereka akan mengambil data atau menerima notifikasi dari *publisher*. Keuntungannya pada kasus ini adalah *subscriber* dapat menentukan kapan mereka akan mengambil data dari *publisher* sehingga mereka tidak terganggu dengan notifikasi pada saat yang tidak diinginkan. Selain itu, dengan model ini, *subscriber* juga dapat menentukan data apa yang akan mereka ambil. Kelemahannya adalah *subscriber* tidak dapat langsung/dengan segera menerima data atau  notifikasi jika terjadi penambahan atau penghapusan product.
+
+3. Jika kita tidak menggunakan *multi-threading*, maka aplikasi akan mengirim notifikasi secara satu persatu. Hal ini dapat memperlambat proses pengiriman notifikasi terutama jika terdapat banyak *subscriber*. Jadi program tidak akan menjadi error, tetapi hal ini dapat memperlambat proses notifikasi secara signifikan.
