@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Pada *Observer design patterns* akan lebih baik jika kita menggunakan interface (atau traits). Hal ini dikarenakan kita akan mendapatkan fleksibilitas jika sekiranya kita ingin menambahkan tipe subscriber yang berbeda. Dengan adanya interface kita tidak perlu melakukan modifikasi atau perubahan pada code yang telah kita buat, karena kita telah menerapkan *Open-close principle*. Akan tetapi, jika hanya terdapat satu tipe subscriber dan dapat dipastikan tidak akan bertambah, maka penggunaan *single Model struct* sudah cukup. Oleh karena itu, jika pada kasus BambangShop dapat dipastikan hanya terdapat satu tipe subscriber, maka penggunaan *single model struct* sudah cukup.
+
+2. Menurut saya, penggunaan DashMap diperlukan untuk kasus ini. Hal ini dikarenakan dengan dengan DashMap kita dapat menyimpan key-value *pairs* dikarenakan *key*-nya yang unik. DashMap dapat membantu kita dengan lebih mudah melakukan pencarian dengan *key* tersebut. Pada kasus ini, dengan DashMap kita dapat dengan mudah mencari Subscriber berdasarkan url-nya. Sementara itu, jika kita menggunakan Vec, maka kita mungkin perlu melakukan iterasi untuk menemukan Subscriber yang diinginkan sehingga hal ini dapat mempersulit proses pengambilan dan pengupdate-an data.
+
+3. Penggunaan DashMap pada Singleton pattern membantu aplikasi atau program untuk menangani *reads* dan *writes* secara bersamaan. Oleh karena itu, akan lebih baik jika kita menggunakan DashMap dibanding HashMap. Hal ini dikarenakan DashMap lebih cocok untuk aplikasi multithreading dimana aplikasi yang kita buat memerlukan hal ini karena akan diakses oleh banyak thread. Dengan singleton pattern seperti yang telah kita implementasikan, kita dapat memastikan objek-objek subscriber hanya berada pada 1 DashMap karena singleton pattern memastikan hanya terdapat 1 instance dari objek tersebut.
 
 #### Reflection Publisher-2
 
